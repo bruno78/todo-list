@@ -40,7 +40,7 @@ export default class Nav extends React.Component {
               <ul class="nav navbar-nav navbar-right">
                 <li class="todosClass"><IndexLink to="/" onclick={this.toggleCollapse.bind(this)}>Todos</IndexLink></li>
                 <li class="FavoritesClass"><Link to="favorites" onclick={this.toggleCollapse.bind(this)}>Favorites</Link></li>
-                <li class="settingsClass"><Link to="about" onClick={this.toggleCollapse.bind(this)}>Settings</Link></li>
+                <li class="settingsClass"><Link to="settings" onClick={this.toggleCollapse.bind(this)}>Settings</Link></li>
               </ul>
             </div>
           </div>
