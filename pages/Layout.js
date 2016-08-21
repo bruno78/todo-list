@@ -5,9 +5,10 @@ import Footer from "../components/layout/Footer";
 import Nav from "../components/layout/Nav";
 
 export default class Layout extends React.Component {
-  navigate()
-  this.props.history.replaceState(null, "/");
-
+  navigate() {
+    this.props.history.replaceState(null, "/");
+  }
+  
   render() {
     return (
       <div>
