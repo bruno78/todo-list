@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import Footer from "../components/layout/Footer";
 import Nav from "../components/layout/Nav";
 
-export defautl class Layout extends React.Component {
+export default class Layout extends React.Component {
   navigate()
   this.props.history.replaceState(null, "/");
 
