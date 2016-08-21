@@ -8,7 +8,7 @@ export default class Layout extends React.Component {
   navigate() {
     this.props.history.replaceState(null, "/");
   }
-  
+
   render() {
     return (
       <div>
@@ -16,7 +16,6 @@ export default class Layout extends React.Component {
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-              <h1> Todo List </h1>
 
               {this.props.children}
 
