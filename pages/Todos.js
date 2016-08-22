@@ -7,21 +7,28 @@ import TodoStore from "../stores/TodoStore";
 export default class Todos extends React.Component {
   constructor() {
     super();
+    this.getTodos = this.getTodos.bind(this);
     this.state = {
       todos: TodoStore.getAll(),
     };
   }
 
   componentWillMount() {
-    TodoStore.on("change", () => {
-      this.setState({
-        todos: TodoStore.getAll(),
-      });
+    TodoStore.on("change", this.getTodos);
+  }
+
+  componentWillUnmount() {
+    TodoStore.removeListener("change", this.getTodos);
+  }
+
+  getTodos() {
+    this.setState({
+      todos: TodoStore.getAll(),
     });
   }
 
-  createTodo() {
-    TodoActions.createTodo(Date.now());
+  reloadTodos() {
+    TodoActions.reloadTodos();
   }
 
   render() {
@@ -32,7 +39,8 @@ export default class Todos extends React.Component {
 
     return (
       <div>
-        <button onClick={this.createTodo.bind(this)}>Create!</button>
+        <button onClick={this.reloadTodos.bind(this)}>Reload!</button>
+        <input />
         <h1>Todos</h1>
         <ul>{TodoComponents}</ul>
       </div>
